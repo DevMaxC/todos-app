@@ -12,9 +12,9 @@ interface Note {
 
 export default function Home() {
   const [notes, setNotes] = useState<Array<Note>>([
-    { title: "Test Element", content: "Test 1234" },
-    { title: "Test Element", content: "Test 1234" },
-    { title: "Test Element", content: "Test 1234" },
+    { title: "Have Breakfast", content: "Toast" },
+    { title: "Walk Dog", content: "2 mile walk" },
+    { title: "Buy Lunch", content: "Restaurant in town" },
   ]);
   const addNote = (noteProps: Note) => {
     setNotes([...notes, noteProps]);
@@ -94,16 +94,16 @@ export default function Home() {
           <div className="flex flex-col items-center gap-2">
             {notes.map((n, i) => (
               <div
-                className="relative w-full border-2 border-opacity-50 p-2 md:w-1/3"
+                className="relative w-full rounded-md bg-white p-2 md:w-1/3"
                 key={i}
               >
-                <h1 className="text-xl text-red-200">{n.title}</h1>
-                <h2 className="text-red-300">{n.content}</h2>
+                <h1 className="text-xl text-red-500">{n.title}</h1>
+                <h2 className="text-red-600">{n.content}</h2>
                 <button
                   onClick={() => deleteNote(i)}
-                  className="absolute top-2 right-2 h-5 w-5  content-center rounded-full bg-white text-center"
+                  className="absolute top-2 right-2 h-5 w-5  content-center rounded-full bg-red-600 text-center"
                 >
-                  <XIcon className="text-red-300"></XIcon>
+                  <XIcon className="text-red-200"></XIcon>
                 </button>
               </div>
             ))}
