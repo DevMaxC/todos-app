@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Ref, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { XIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 
 interface Note {
   title: string;
@@ -34,9 +35,17 @@ export default function Home() {
   const [error, seterror] = useState<boolean>(false);
 
   return (
-    <div className="bg-red-600">
+    <div className="min-w-screen relative h-full min-h-screen w-full bg-red-600">
+      <Link href="https://portfolio-qnimqxkeh-gusud.vercel.app/">
+        <a className="absolute top-4 right-4 cursor-pointer rounded-md bg-red-700 p-4 font-thin text-slate-300 transition-colors hover:bg-red-800 hover:text-slate-200">
+          <h1>Made by Max Church </h1>
+          <h2>Using:</h2>
+          <h2>TypeScript, React, Tailwind, NextJS</h2>
+        </a>
+      </Link>
+
       <h1 className="p-5 text-center text-3xl text-red-200">Todos app</h1>
-      <div className="min-w-screen h-full min-h-screen w-full bg-red-600 p-2">
+      <div className="bg-red-600 p-2">
         <div className="outline-rounded mx-auto mt-10 flex w-full flex-col gap-2 rounded-sm outline-hidden outline-offset-8 outline-red-500 md:w-1/3 md:outline">
           <input
             className="rounded-lg p-2 text-red-700 outline-2 outline-red-900 focus:outline"
@@ -61,6 +70,9 @@ export default function Home() {
                   title: titleInputRef.current.value,
                   content: descInputRef.current.value,
                 });
+
+                titleInputRef.current.value = "";
+                descInputRef.current.value = "";
               } else {
                 seterror(true);
                 if (titleInputRef.current.value.length == 0) {
@@ -97,13 +109,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
-      <div className="flex h-10 w-full items-center justify-around bg-red-800 text-red-300">
-        <h2>Made with</h2>
-        <h2>TypeScript</h2>
-        <h2>Tailwind</h2>
-        <h2>React</h2>
-        <h2>Vercel</h2>
       </div>
     </div>
   );
