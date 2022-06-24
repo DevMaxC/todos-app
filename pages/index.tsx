@@ -46,7 +46,7 @@ export default function Home() {
 
       <h1 className="p-5 text-center text-3xl text-red-200">Todos app</h1>
       <div className="bg-red-600 p-2">
-        <div className="outline-rounded mx-auto mt-10 flex w-full flex-col gap-2 rounded-sm outline-hidden outline-offset-8 outline-red-500 md:w-1/3 md:outline">
+        <div className="mx-auto mt-10 flex w-full flex-col gap-2 rounded-sm md:w-1/3">
           <input
             className="rounded-lg p-2 text-red-700 outline-2 outline-red-900 focus:outline"
             ref={titleInputRef}
