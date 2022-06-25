@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <div className="min-w-screen relative h-full min-h-screen w-full bg-red-600">
-      <Link href="https://portfolio-qnimqxkeh-gusud.vercel.app/">
+      <Link href="https://portfolio-gusud.vercel.app/">
         <a className="absolute top-4 right-4 cursor-pointer rounded-md bg-red-700 p-4 font-thin text-slate-300 transition-colors hover:bg-red-800 hover:text-slate-200">
           <h1>Made by Max Church </h1>
           <h2>Using:</h2>
